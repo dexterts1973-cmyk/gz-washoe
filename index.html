@@ -397,457 +397,8 @@
             background: white;
             color: black;
             width: 100%;
-            padding: 0.75rem;
-            border-radius: 8px;
-            font-weight: 700;
-            border: none;
-            margin-top: 1.5rem;
-            cursor: pointer;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .promo-visual {
-            background-color: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-        }
-        .shoes-graphics {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: 2px;
-        }
-        .visual-tag {
-            background: white;
-            color: black;
-            font-size: 0.65rem;
-            font-weight: 800;
-            padding: 0.1rem 0.4rem;
-            border-radius: 4px;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-        .promo-footer-note {
-            text-align: center;
-            font-size: 0.75rem;
-            color: #64748b;
-            margin-top: 1rem;
-        }
-
-        /* Cara Kerja Section */
-        .step-grid {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        .step-card {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-            position: relative;
-        }
-        .step-num {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: #000;
-            color: white;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            font-size: 0.7rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .step-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-        .step-card h4 {
-            font-weight: 700;
-            font-size: 0.95rem;
-            margin-bottom: 0.4rem;
-        }
-        .step-card p {
-            font-size: 0.75rem;
-            color: #64748b;
-            line-height: 1.4;
-        }
-        .pro-tip {
-            max-width: 1000px;
-            margin: 0 auto;
-            background-color: #f1f5f9;
-            border-radius: 8px;
-            padding: 0.75rem 1rem;
-            font-size: 0.8rem;
-            color: #334155;
-            text-align: left;
-        }
-
-        /* Feedback Section - Disqus Style Box */
-        .feedback-section {
-            background-color: #f8fafc;
-            padding: 4rem 1.5rem;
-            border-top: 1px solid #e2e8f0;
-        }
-        .feedback-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .disqus-container-box {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-        }
-
-        /* MODAL POPUP FIX (Figma Overlay Style) */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(4px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-        .modal-overlay.show {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        .modal-box {
-            background: white;
-            width: 90%;
-            max-width: 450px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
-        }
-        .modal-overlay.show .modal-box {
-            transform: translateY(0);
-        }
-        .modal-header {
-            background: #0f172a;
-            color: white;
-            padding: 1rem;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-weight: 700;
-            font-size: 1rem;
-            text-align: center;
-        }
-        .modal-body {
-            padding: 1.5rem;
-        }
-        .modal-footer {
-            padding: 0 1.5rem 1.5rem 1.5rem;
-            display: flex;
-            justify-content: flex-end;
-            gap: 0.75rem;
-        }
-        .btn-modal-cancel {
-            background: transparent;
-            border: none;
-            color: #64748b;
-            font-weight: 600;
-            font-size: 0.85rem;
-            cursor: pointer;
-            padding: 0.5rem 1rem;
-        }
-        .btn-modal-submit {
-            background: #000000;
-            color: white;
-            border: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .form-group {
-            margin-bottom: 1rem;
-        }
-        .form-group label {
-            display: block;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-            color: #475569;
-        }
-        .form-control {
-            width: 100%;
-            padding: 0.6rem;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            font-family: inherit;
-            font-size: 0.85rem;
-        }
-        .form-control:focus {
-            outline: none;
-            border-color: #3b82f6;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #0b111e;
-            color: white;
-            padding: 3rem 1.5rem 1.5rem 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-        .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.5fr repeat(2, 1fr);
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        .footer-brand h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        .footer-brand p {
-            color: #94a3b8;
-            font-size: 0.8rem;
-            line-height: 1.5;
-            margin-bottom: 1rem;
-        }
-        .footer-socials a {
-            color: #94a3b8;
-            font-size: 1.2rem;
-            margin-right: 0.75rem;
-            text-decoration: none;
-        }
-        .footer-col h4 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #f8fafc;
-        }
-        .footer-col ul {
-            list-style: none;
-        }
-        .footer-col ul li {
-            font-size: 0.85rem;
-            color: #94a3b8;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.75rem;
-            color: #64748b;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 900px) {
-            .step-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .promo-card {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            .layanan-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero-features {
-                grid-template-columns: 1fr;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="navbar">
-            <div class="brand">
-                <div class="brand-logo">GZ</div>
-                <div class="brand-text">
-                    <h2>GZ Washoe</h2>
-                    <p>Jasa Cuci Sepatu</p>
-                </div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#layanan">Layanan</a></li>
-                <li><a href="#promo">Promo</a></li>
-                <li><a href="#cara-kerja">Cara Kerja</a></li>
-                <li><a href="#feedback">Feedback</a></li>
-            </ul>
-            <button class="btn-nav-order" onclick="openOrderModal()">Pesan Sekarang</button>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="hero-container">
-            <div class="badge-favorite">✨ Gen Z's Favorite Shoe Care</div>
-            <h1>Sepatu Bersih,<br>Penampilan Makin Kece!</h1>
-            <p class="hero-subtitle">Cuci sepatu dengan treatment khusus. Sepatumu bersih, kamu makin percaya diri! 🔥</p>
-            
-            <div class="hero-ctas">
-                <button onclick="openOrderModal()" class="btn-primary">🚀 Mulai Pesan</button>
-                <a href="#layanan" class="btn-secondary">Lihat Layanan</a>
-            </div>
-
-            <div class="hero-features">
-                <div class="h-feat-card">🚚 Gratis Antar-Jemput</div>
-                <div class="h-feat-card">✅ Hasil Terjamin</div>
-                <div class="h-feat-card">⚡ Proses Cepat</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="layanan" class="light-section">
-        <div class="section-header">
-            <div class="section-badge">💼 Layanan Kami</div>
-            <h2>Paket Layanan Cuci Sepatu</h2>
-            <p>Pilih layanan sesuai kebutuhan sepatumu!</p>
-        </div>
-
-        <div class="layanan-grid">
-            <div class="layanan-card">
-                <div>
-                    <div class="card-pop-badge">★ TERPOPULER</div>
-                    <div class="layanan-title">✨ Regular</div>
-                    <div class="price">Rp 20.000</div>
-                    <p class="layanan-desc">Cuci standar untuk semua jenis sepatu</p>
-                    <ul class="layanan-list">
-                        <li>Pembersihan bagian luar</li>
-                        <li>Pembersihan bagian dalam</li>
-                        <li>Cocok untuk semua jenis sepatu</li>
-                        <li>Pewangi alami</li>
-                    </ul>
-                </div>
-                <button class="btn-card-order" onclick="openOrderModal('reguler')">Pilih Paket</button>
-            </div>
-
-            <div class="layanan-card">
-                <div>
-                    <div class="layanan-title">⚡ Express</div>
-                    <div class="price">Rp 35.000</div>
-                    <p class="layanan-desc">Cuci kilat dalam satu hari!</p>
-                    <ul class="layanan-list">
-                        <li>Pembersihan menyeluruh</li>
-                        <li>Proses 1 hari selesai</li>
-                        <li>Prioritas pengerjaan</li>
-                        <li>Hasil maksimal</li>
-                    </ul>
-                </div>
-                <button class="btn-card-order" onclick="openOrderModal('express')">Pilih Paket</button>
-            </div>
-
-            <div class="layanan-card">
-                <div>
-                    <div class="layanan-title">🔧 Reglue</div>
-                    <div class="price">Rp 35.000</div>
-                    <p class="layanan-desc">Perbaikan kerusakan sepatu</p>
-                    <ul class="layanan-list">
-                        <li>Perbaikan sol lepas</li>
-                        <li>Rekat bagian rusak</li>
-                        <li>Harga sesuai kerusakan</li>
-                        <li>Garansi perbaikan</li>
-                    </ul>
-                </div>
-                <button class="btn-card-order" onclick="openOrderModal('reglue')">Pilih Paket</button>
-            </div>
-
-            <div class="layanan-card">
-                <div>
-                    <div class="layanan-title">🌪️ Suede</div>
-                    <div class="price">Rp 30.000</div>
-                    <p class="layanan-desc">Treatment khusus bahan suede</p>
-                    <ul class="layanan-list">
-                        <li>Menghidupkan kembali suede</li>
-                        <li>Pembersihan lembut</li>
-                        <li>Perawatan tekstur</li>
-                        <li>Anti air treatment</li>
-                    </ul>
-                </div>
-                <button class="btn-card-order" onclick="openOrderModal('suede')">Pilih Paket</button>
-            </div>
-
-            <div class="layanan-card">
-                <div>
-                    <div class="layanan-title">☀️ Rewhite</div>
-                    <div class="price">Rp 30.000</div>
-                    <p class="layanan-desc">Memutihkan sepatu kusam</p>
-                    <ul class="layanan-list">
-                        <li>Menghilangkan noda membandel</li>
-                        <li>Memutihkan kembali</li>
-                        <li>Treatment khusus mid-sole</li>
-                    </ul>
-                </div>
-                <button class="btn-card-order" onclick="openOrderModal('rewhite')">Pilih Paket</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="promo" class="promo-section">
-        <div class="promo-container">
-            <div class="promo-badge">🎉 PROMO SPESIAL</div>
-            <h2 style="text-align:center; font-size: 1.8rem; margin-bottom: 0.5rem;">Paket Hemat Batch Cleaning</h2>
-            <p style="text-align:center; color: #cbd5e1; font-size: 0.9rem; margin-bottom: 2.5rem;">Ajak teman dan dapetin harga spesial!</p>
-
-            <div class="promo-card">
-                <div class="badge-hemat">HEMAT<br>33%</div>
-                <div class="promo-info">
-                    <h3>👥 Batch Cleaning</h3>
-                    <div class="promo-price">Rp 60.000</div>
-                    <div class="promo-highlight">🎁 Cuci 3 Pasang + 1 Pasang GRATIS!</div>
-                    <p style="font-size: 0.75rem; color: #94a3b8; margin-bottom: 1rem;">Harga normal: <span style="text-decoration: line-through;">Rp 80.000</span></p>
-                    <ul class="promo-features-list">
-                        <li>📦 Cocok untuk kumpul bareng teman atau keluarga</li>
-                        <li>📈 Hemat hingga Rp 20.000 per paket</li>
-                        <li>👥 Proses bersamaan, lebih efisien</li>
-                    </ul>
-                    <button class="btn-promo-order" onclick="openOrderModal('batch')">🚀 Pesan Batch Cleaning Sekarang!</button>
-                </div>
-                <div class="promo-visual">
-                    <div class="shoes-graphics">👟👟 👟</div>
-                    <div class="shoes-graphics" style="font-size: 1.5rem; margin-top:-10px;">+</div>
+using ' media.animate_image
+ed, margin-top:-10px;">+</div>
                     <div class="shoes-graphics">👟</div>
                     <div class="visual-tag">FREE!</div>
                     <p style="font-size: 0.9rem; font-weight:700;">Bayar 3, Dapat 4!</p>
@@ -902,22 +453,14 @@
             <div class="section-header">
                 <div class="section-badge" style="background:#3b82f6;">💬 Suara Pelanggan</div>
                 <h2>Feedback & Ulasan</h2>
-                <p>Komentar dan ulasan pelanggan otomatis ter-update secara live di semua device!</p>
+                <p id="feedback-subtitle">Lihat apa kata pelanggan GZ Washoe</p>
             </div>
 
-            <div class="disqus-container-box">
+            <!-- BOX UNTUK GUEST: Disqus -->
+            <div class="disqus-container-box" id="disqusBox" style="display:none;">
                 <div id="disqus_thread"></div>
                 <script>
-                    /**
-                    * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                    * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-                    /*
-                    var disqus_config = function () {
-                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                    };
-                    */
-                    (function() { // DON'T EDIT BELOW THIS LINE
+                    (function() {
                     var d = document, s = d.createElement('script');
                     s.src = 'https://gz-washoe.disqus.com/embed.js';
                     s.setAttribute('data-timestamp', +new Date());
@@ -925,6 +468,19 @@
                     })();
                 </script>
                 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+
+            <!-- BOX UNTUK PELANGGAN: Testimoni statis -->
+            <div class="disqus-container-box" id="testimoniBox">
+                <p style="font-size: 2rem; margin-bottom: 0.5rem;">⭐</p>
+                <p style="font-style:italic; color:#334155; margin-bottom:0.8rem; font-size:0.95rem;">"Sepatuku kayak baru lagi, prosesnya cepet banget. Recommended!"</p>
+                <p style="font-size:0.8rem; color:#64748b; font-weight:600; margin-bottom:1.5rem;">- Dimas, Jakarta</p>
+                
+                <p style="font-style:italic; color:#334155; margin-bottom:0.8rem; font-size:0.95rem;">"Pelayanan ramah, hasilnya bersih maksimal. Bakal langganan terus!"</p>
+                <p style="font-size:0.8rem; color:#64748b; font-weight:600;">- Sinta, Depok</p>
+                
+                <hr style="margin:1.5rem 0; border:none; border-top:1px solid #e2e8f0;">
+                <p style="font-size:0.8rem; color:#64748b;">Kamu admin GZ Washoe? <button onclick="showGuestFeedback()" style="background:none; border:none; color:#3b82f6; font-weight:600; cursor:pointer; text-decoration:underline;">Buka kolom komentar</button></p>
             </div>
         </div>
     </section>
@@ -1026,7 +582,7 @@
             else if(serviceKey === 'rewhite') serviceSelect.value = "☀️ Rewhite - Rp 30.000";
             else if(serviceKey === 'batch') {
                 serviceSelect.value = "👥 Batch Cleaning - Rp 60.000";
-                document.getElementById('orderQty').value = 4; // Auto-set ke minimal promo paket 3+1
+                document.getElementById('orderQty').value = 4;
             }
             
             modal.classList.add('show');
@@ -1038,11 +594,10 @@
             document.getElementById('orderQty').value = 1;
         }
 
-        // Kirim Form langsung merujuk ke API WhatsApp menggunakan pesan template rapi
+        // Kirim Form ke WhatsApp
         document.getElementById('whatsappOrderForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Mengambil input data form penjemputan
             const name = document.getElementById('orderName').value;
             const phone = document.getElementById('orderPhone').value;
             const address = document.getElementById('orderAddress').value;
@@ -1050,11 +605,9 @@
             const qty = document.getElementById('orderQty').value;
             const notes = document.getElementById('orderNotes').value || '-';
 
-            // Mengatur nomor WhatsApp tujuan toko terbaru (6282115994231)
             const whatsappNumber = "6282115994231"; 
 
-            // Merapikan template teks pesanan menggunakan encodeURIComponent agar spasi dan baris terbaca sempurna
-            const textMessage = `*FORM PEMESANAN GZ WASHOE*%0A` +
+            const textMessage = `*FORM PEMESAN GZ WASHOE*%0A` +
                                 `=========================%0A%0A` +
                                 `👤 *Nama Lengkap:* ${name}%0A` +
                                 `📞 *Nomor Telepon:* ${phone}%0A` +
@@ -1065,22 +618,46 @@
                                 `=========================%0A` +
                                 `_Mohon segera diproses ya min, terima kasih!_ 🔥`;
 
-            // Membuat URL tautan langsung ke WhatsApp web/aplikasi
             const waUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${textMessage}`;
-
-            // Membuka tab baru menuju WhatsApp pelanggan
             window.open(waUrl, '_blank');
-
-            // Menutup jendela modal popup setelah pemesanan dikirim
             closeOrderModal();
         });
 
-        // Menutup modal otomatis jika area background overlay luar diklik
+        // Tutup modal jika klik overlay
         window.addEventListener('click', function(e) {
             if (e.target === modal) {
                 closeOrderModal();
             }
         });
+
+        // LOGIC FEEDBACK KHUSUS GUEST
+        function checkFeedbackViewer() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const isGuest = urlParams.get('guest') === '1' || localStorage.getItem('gz_guest_mode') === 'true';
+            
+            const disqusBox = document.getElementById('disqusBox');
+            const testimoniBox = document.getElementById('testimoniBox');
+            const subtitle = document.getElementById('feedback-subtitle');
+
+            if (isGuest) {
+                disqusBox.style.display = 'block';
+                testimoniBox.style.display = 'none';
+                subtitle.textContent = 'Komentar & ulasan pelanggan live via Disqus';
+            } else {
+                disqusBox.style.display = 'none';
+                testimoniBox.style.display = 'block';
+                subtitle.textContent = 'Testimoni pelanggan GZ Washoe';
+            }
+        }
+
+        function showGuestFeedback() {
+            localStorage.setItem('gz_guest_mode', 'true');
+            checkFeedbackViewer();
+            document.getElementById('feedback').scrollIntoView({behavior: 'smooth'});
+        }
+
+        // Jalanin pas halaman load
+        checkFeedbackViewer();
     </script>
 </body>
 </html>
