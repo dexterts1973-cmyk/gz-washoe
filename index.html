@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GZ Washoe - Jasa Cuci Sepatu</title>
-    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -495,7 +494,7 @@
             text-align: left;
         }
 
-        /* Feedback Section */
+        /* Feedback Section - Disqus Style Box */
         .feedback-section {
             background-color: #f8fafc;
             padding: 4rem 1.5rem;
@@ -505,93 +504,12 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        .feedback-form-box {
+        .disqus-container-box {
             background: white;
             border: 1px solid #e2e8f0;
             border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
+            padding: 2rem;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-        }
-        .feedback-form-box h3 {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: #0f172a;
-        }
-        .form-group {
-            margin-bottom: 1rem;
-        }
-        .form-group label {
-            display: block;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-            color: #475569;
-        }
-        .form-control {
-            width: 100%;
-            padding: 0.6rem;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            font-family: inherit;
-            font-size: 0.85rem;
-        }
-        .form-control:focus {
-            outline: none;
-            border-color: #3b82f6;
-        }
-        .rating-input {
-            display: flex;
-            gap: 0.5rem;
-            font-size: 1.3rem;
-            cursor: pointer;
-            margin-bottom: 0.5rem;
-        }
-        .rating-star {
-            color: #cbd5e1;
-            transition: color 0.2s;
-        }
-        .rating-star.active {
-            color: #eab308;
-        }
-        .btn-submit-feedback {
-            background: #0f172a;
-            color: white;
-            border: none;
-            padding: 0.6rem 1.2rem;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-        .feedback-list h3 {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-        .feedback-item {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 1rem;
-            margin-bottom: 0.75rem;
-        }
-        .feedback-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.8rem;
-            margin-bottom: 0.4rem;
-        }
-        .feedback-name {
-            font-weight: 700;
-            color: #334155;
-        }
-        .feedback-stars {
-            color: #eab308;
-        }
-        .feedback-text {
-            font-size: 0.85rem;
-            color: #475569;
         }
 
         /* MODAL POPUP FIX (Figma Overlay Style) */
@@ -667,6 +585,28 @@
             display: inline-flex;
             align-items: center;
             gap: 0.4rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: #475569;
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.6rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.85rem;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: #3b82f6;
         }
 
         /* Footer */
@@ -762,7 +702,6 @@
 </head>
 <body>
 
-    <!-- Header / Navbar -->
     <header>
         <div class="navbar">
             <div class="brand">
@@ -782,7 +721,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
             <div class="badge-favorite">✨ Gen Z's Favorite Shoe Care</div>
@@ -802,7 +740,6 @@
         </div>
     </section>
 
-    <!-- Section Layanan -->
     <section id="layanan" class="light-section">
         <div class="section-header">
             <div class="section-badge">💼 Layanan Kami</div>
@@ -811,7 +748,6 @@
         </div>
 
         <div class="layanan-grid">
-            <!-- Reguler -->
             <div class="layanan-card">
                 <div>
                     <div class="card-pop-badge">★ TERPOPULER</div>
@@ -828,7 +764,6 @@
                 <button class="btn-card-order" onclick="openOrderModal('reguler')">Pilih Paket</button>
             </div>
 
-            <!-- Express -->
             <div class="layanan-card">
                 <div>
                     <div class="layanan-title">⚡ Express</div>
@@ -844,7 +779,6 @@
                 <button class="btn-card-order" onclick="openOrderModal('express')">Pilih Paket</button>
             </div>
 
-            <!-- Reglue -->
             <div class="layanan-card">
                 <div>
                     <div class="layanan-title">🔧 Reglue</div>
@@ -860,7 +794,6 @@
                 <button class="btn-card-order" onclick="openOrderModal('reglue')">Pilih Paket</button>
             </div>
 
-            <!-- Suede -->
             <div class="layanan-card">
                 <div>
                     <div class="layanan-title">🌪️ Suede</div>
@@ -876,7 +809,6 @@
                 <button class="btn-card-order" onclick="openOrderModal('suede')">Pilih Paket</button>
             </div>
 
-            <!-- Rewhite -->
             <div class="layanan-card">
                 <div>
                     <div class="layanan-title">☀️ Rewhite</div>
@@ -893,7 +825,6 @@
         </div>
     </section>
 
-    <!-- Section Promo -->
     <section id="promo" class="promo-section">
         <div class="promo-container">
             <div class="promo-badge">🎉 PROMO SPESIAL</div>
@@ -927,7 +858,6 @@
         </div>
     </section>
 
-    <!-- Section Cara Kerja -->
     <section id="cara-kerja" class="light-section">
         <div class="section-header">
             <div class="section-badge">🖤 Prosesnya Gampang Banget!</div>
@@ -967,65 +897,38 @@
         </div>
     </section>
 
-    <!-- Feedback Section -->
     <section id="feedback" class="feedback-section">
         <div class="feedback-container">
             <div class="section-header">
                 <div class="section-badge" style="background:#3b82f6;">💬 Suara Pelanggan</div>
                 <h2>Feedback & Ulasan</h2>
-                <p>Kirimkan masukan atau lihat ulasan dari pelanggan GZ Washoe</p>
+                <p>Komentar dan ulasan pelanggan otomatis ter-update secara live di semua device!</p>
             </div>
 
-            <!-- Form Tambah Feedback -->
-            <div class="feedback-form-box">
-                <h3>Tulis Ulasan Anda</h3>
-                <form id="feedbackForm">
-                    <div class="form-group">
-                        <label>Nama Lengkap</label>
-                        <input type="text" id="fbName" class="form-control" placeholder="Contoh: Budi Santoso" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Rating</label>
-                        <div class="rating-input" id="ratingInput">
-                            <span class="rating-star" data-value="1">★</span>
-                            <span class="rating-star" data-value="2">★</span>
-                            <span class="rating-star" data-value="3">★</span>
-                            <span class="rating-star" data-value="4">★</span>
-                            <span class="rating-star" data-value="5">★</span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Ulasan / Masukan</label>
-                        <textarea id="fbText" class="form-control" rows="3" placeholder="Bagaimana pengalaman Anda mencuci sepatu di sini?" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit-feedback">Kirim Ulasan</button>
-                </form>
-            </div>
-
-            <!-- Daftar Feedback -->
-            <div class="feedback-list">
-                <h3>Ulasan Terbaru</h3>
-                <div id="feedbackContainer">
-                    <div class="feedback-item">
-                        <div class="feedback-meta">
-                            <span class="feedback-name">Rian Pratama</span>
-                            <span class="feedback-stars">★★★★★</span>
-                        </div>
-                        <p class="feedback-text">Gokil sih paket Batch Cleaning-nya! Cuci berempat bareng temen kosan jadi hemat banget, mana bersih wangi lagi.</p>
-                    </div>
-                    <div class="feedback-item">
-                        <div class="feedback-meta">
-                            <span class="feedback-name">Siti Khadijah</span>
-                            <span class="feedback-stars">★★★★☆</span>
-                        </div>
-                        <p class="feedback-text">Layanan Suede-nya juara. Sepatu yang tadinya bulukan jadi keliatan seger lagi teksturnya. Kurirnya juga ramah pas jemput.</p>
-                    </div>
-                </div>
+            <div class="disqus-container-box">
+                <div id="disqus_thread"></div>
+                <script>
+                    /**
+                    * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://gz-washoe.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             </div>
         </div>
     </section>
 
-    <!-- DYNAMIC INTERACTIVE MODAL OVERLAY (Sesuai Gambar Figma) -->
     <div class="modal-overlay" id="orderModal">
         <div class="modal-box">
             <div class="modal-header">
@@ -1073,7 +976,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-grid">
             <div class="footer-brand">
@@ -1110,70 +1012,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript Integrasi Modal & WhatsApp Template -->
     <script>
-        // Logic Interaksi Rating Ulasan
-        let selectedRating = 0;
-        const stars = document.querySelectorAll('#ratingInput .rating-star');
-
-        stars.forEach(star => {
-            star.addEventListener('click', function() {
-                selectedRating = parseInt(this.getAttribute('data-value'));
-                updateStarsDisplay();
-            });
-        });
-
-        function updateStarsDisplay() {
-            stars.forEach(star => {
-                const val = parseInt(star.getAttribute('data-value'));
-                if(val <= selectedRating) {
-                    star.classList.add('active');
-                } else {
-                    star.classList.remove('active');
-                }
-            });
-        }
-
-        // Submit Form Ulasan/Feedback
-        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('fbName').value;
-            const text = document.getElementById('fbText').value;
-
-            if(selectedRating === 0) {
-                alert('Silakan pilih rating bintang terlebih dahulu!');
-                return;
-            }
-
-            const feedbackItem = document.createElement('div');
-            feedbackItem.classList.add('feedback-item');
-
-            let starString = '';
-            for(let i=1; i<=5; i++) {
-                starString += i <= selectedRating ? '★' : '☆';
-            }
-
-            feedbackItem.innerHTML = `
-                <div class="feedback-meta">
-                    <span class="feedback-name">${name}</span>
-                    <span class="feedback-stars">${starString}</span>
-                </div>
-                <p class="feedback-text">${text}</p>
-            `;
-
-            const container = document.getElementById('feedbackContainer');
-            container.insertBefore(feedbackItem, container.firstChild);
-
-            document.getElementById('feedbackForm').reset();
-            selectedRating = 0;
-            updateStarsDisplay();
-
-            alert('Terima kasih! Ulasan Anda berhasil ditambahkan secara live.');
-        });
-
-        // ==========================================
-        // MANAJEMEN MODAL & WHATSAPP (NOMOR BARU: 6282115994231)
-        // ==========================================
         const modal = document.getElementById('orderModal');
 
         // Membuka modal dan otomatis menyesuaikan dropdown paket jika dipilih lewat card
@@ -1211,7 +1050,7 @@
             const qty = document.getElementById('orderQty').value;
             const notes = document.getElementById('orderNotes').value || '-';
 
-            // Mengatur nomor WhatsApp tujuan toko terbaru (082115994231 -> 6282115994231)
+            // Mengatur nomor WhatsApp tujuan toko terbaru (6282115994231)
             const whatsappNumber = "6282115994231"; 
 
             // Merapikan template teks pesanan menggunakan encodeURIComponent agar spasi dan baris terbaca sempurna
