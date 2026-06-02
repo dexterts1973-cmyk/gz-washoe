@@ -494,7 +494,7 @@
             text-align: left;
         }
 
-        /* Feedback Section - Disqus Style Box */
+        /* CUSTOM FIREBASE COMMENTS SYSTEM STYLES */
         .feedback-section {
             background-color: #f8fafc;
             padding: 4rem 1.5rem;
@@ -504,12 +504,84 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        .disqus-container-box {
+        .firebase-comment-box {
             background: white;
             border: 1px solid #e2e8f0;
             border-radius: 12px;
             padding: 2rem;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+        .fb-comment-form h3 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #0f172a;
+        }
+        .fb-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .fb-input-group input, .fb-input-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            transition: border-color 0.2s;
+        }
+        .fb-input-group input:focus, .fb-input-group textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+        .fb-input-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .btn-fb-submit {
+            background-color: #0f172a;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            align-self: flex-start;
+        }
+        .btn-fb-submit:hover {
+            background-color: #3b82f6;
+        }
+        .fb-comments-list {
+            margin-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1.5rem;
+        }
+        .fb-comments-list h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #0f172a;
+        }
+        .fb-comment-item {
+            padding: 1rem;
+            background-color: #f8fafc;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            border: 1px solid #f1f5f9;
+        }
+        .fb-comment-item strong {
+            color: #1e293b;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        .fb-comment-item p {
+            font-size: 0.85rem;
+            color: #475569;
+            margin: 0;
+            word-break: break-word;
         }
 
         /* MODAL POPUP FIX (Figma Overlay Style) */
@@ -905,26 +977,22 @@
                 <p>Komentar dan ulasan pelanggan otomatis ter-update secara live di semua device!</p>
             </div>
 
-            <div class="disqus-container-box">
-                <div id="disqus_thread"></div>
-                <script>
-                    /**
-                    * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                    * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-                    /*
-                    var disqus_config = function () {
-                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                    };
-                    */
-                    (function() { // DON'T EDIT BELOW THIS LINE
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://gz-washoe.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                    })();
-                </script>
-                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <div class="firebase-comment-box">
+                <div class="fb-comment-form">
+                    <h3>Bagikan Pengalaman Anda</h3>
+                    <div class="fb-input-group">
+                        <input type="text" id="fbName" placeholder="Masukkan Nama Anda...">
+                        <textarea id="fbComment" placeholder="Tulis feedback atau ulasan Anda di sini..."></textarea>
+                        <button type="button" class="btn-fb-submit" onclick="submitFirebaseComment()">Kirim Feedback</button>
+                    </div>
+                </div>
+
+                <div class="fb-comments-list">
+                    <h3>Ulasan Terbaru:</h3>
+                    <div id="firebase-comments-container">
+                        <p style="color: #94a3b8; font-style: italic; font-size: 0.9rem;">Memuat komentar...</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1080,6 +1148,70 @@
             if (e.target === modal) {
                 closeOrderModal();
             }
+        });
+    </script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, query, onSnapshot, serverTimestamp, orderBy } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        // Konfigurasi Kunci Firebase gzwashoecomments Anda
+        const firebaseConfig = {
+            apiKey: "AIzaSyDL695t4puX_dW-VQAGvfJrZrbUatMDoH8",
+            authDomain: "gzwashoecomments.firebaseapp.com",
+            projectId: "gzwashoecomments",
+            storageBucket: "gzwashoecomments.firebasestorage.app",
+            messagingSenderId: "250109105851",
+            appId: "1:250109105851:web:882070bba8ebe7491bbb9e"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Pasang fungsi kirim komentar ke lingkup window agar bisa dipanggil onclick HTML
+        window.submitFirebaseComment = async () => {
+            const nameInput = document.getElementById('fbName');
+            const commentInput = document.getElementById('fbComment');
+
+            if (!nameInput.value.trim() || !commentInput.value.trim()) {
+                return alert("Ups! Nama dan komentar tidak boleh kosong.");
+            }
+
+            try {
+                await addDoc(collection(db, "comments"), {
+                    name: nameInput.value.trim(),
+                    text: commentInput.value.trim(),
+                    createdAt: serverTimestamp()
+                });
+                commentInput.value = ''; // Mengosongkan form text area setelah berhasil terkirim
+            } catch (err) {
+                console.error("Firebase Error: ", err);
+                alert("Gagal mengirim ulasan. Pastikan Firestore rules Anda sudah diset ke true.");
+            }
+        };
+
+        // Membaca Data Aliran Masuk (Data Stream Realtime) terurut dari yang terbaru
+        const q = query(collection(db, "comments"), orderBy("createdAt", "desc"));
+        onSnapshot(q, (snapshot) => {
+            const container = document.getElementById('firebase-comments-container');
+            container.innerHTML = '';
+
+            if (snapshot.empty) {
+                container.innerHTML = '<p style="color: #94a3b8; font-style: italic; font-size: 0.85rem;">Belum ada ulasan. Jadilah yang pertama memberikan feedback! ✨</p>';
+                return;
+            }
+
+            snapshot.forEach((doc) => {
+                const data = doc.data();
+                const userName = data.name || "Anonim";
+                const userText = data.text || "";
+
+                container.innerHTML += `
+                    <div class="fb-comment-item">
+                        <strong>👤 ${userName}</strong>
+                        <p>${userText}</p>
+                    </div>`;
+            });
         });
     </script>
 </body>
